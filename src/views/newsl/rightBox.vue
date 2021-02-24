@@ -3,7 +3,12 @@
     <div class="transport all-rl">
       <div class="tit">
         <span>货运</span>
-         <img class="btnid" style="cursor:pointer" src="../../assets/image/next_page_nor@3x.png" alt="">
+        <img
+          class="btnid"
+          style="cursor: pointer"
+          src="../../assets/image/next_page_nor@3x.png"
+          alt=""
+        />
       </div>
       <div class="content">
         <div class="t-top">
@@ -34,7 +39,12 @@
     <div class="repaire all-rl">
       <div class="tit">
         <span>汽修</span>
-         <img class="btnid" style="cursor:pointer" src="../../assets/image/next_page_nor@3x.png" alt="">
+        <img
+          class="btnid"
+          style="cursor: pointer"
+          src="../../assets/image/next_page_nor@3x.png"
+          alt=""
+        />
       </div>
       <div class="content">
         <div class="r-top">
@@ -62,7 +72,12 @@
     <div class="route all-rl">
       <div class="tit">
         <span>道路</span>
-         <img class="btnid" style="cursor:pointer" src="../../assets/image/next_page_nor@3x.png" alt="">
+        <img
+          class="btnid"
+          style="cursor: pointer"
+          src="../../assets/image/next_page_nor@3x.png"
+          alt=""
+        />
       </div>
       <div class="content">
         <div class="r-top">
@@ -147,17 +162,19 @@ export default {
   font-weight: 400;
   .all-rl {
     border: 1px solid rgba(55, 85, 218, 0.3);
-      box-shadow: 0px 0px vh(16) 0 rgba(2, 36, 108, 1) inset;
+    box-shadow: 0px 0px vh(16) 0 rgba(2, 36, 108, 1) inset;
     box-sizing: border-box;
     .tit {
       display: flex;
       justify-content: space-between;
       align-items: center;
       height: vh(44);
-      background: linear-gradient(  92deg,
+      background: linear-gradient(
+        92deg,
         rgba(8, 37, 183, 0.59),
         RGBA(7, 50, 132, 1),
-        rgba(1, 17, 73, 1));
+        rgba(1, 17, 73, 1)
+      );
       font-size: vh(24);
       padding: 0 vw(20);
       span {
@@ -166,7 +183,7 @@ export default {
         color: #0096ff;
         line-height: vh(44);
         background: linear-gradient(
-            92deg,
+          92deg,
           #0072ff 4%,
           #2ce6f7 48%,
           #01aaff 100%
@@ -383,7 +400,7 @@ export default {
                 position: absolute;
                 top: vh(10);
                 right: vw(10);
-                font-size: vw(34);
+                font-size: vw(28);
                 font-family: DIN;
                 font-weight: bold;
                 color: #e5efff;

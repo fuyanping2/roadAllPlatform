@@ -39,6 +39,12 @@
           :class="nameindex == iteam.name ? 'nameList namebjy' : 'nameList'"
         >
           {{ iteam.name }}
+          <div class="boble">
+            <div class="boble-time time-desc">{{ iteam.time }}</div>
+            <div class="boble-desc time-desc">
+              {{ iteam.name + ' ' + iteam.desc }}
+            </div>
+          </div>
         </div>
         <div :style="{ left: numList * index + '%' }" class="timeList">
           {{ iteam.time }}
@@ -207,6 +213,25 @@ export default {
         background: url('../../assets/image/two/4@3x.png');
         background-size: 100% 100%;
       }
+    }
+  }
+  .boble {
+    padding: vh(5) vw(10);
+    border: 1px solid #3286d9;
+    box-shadow: 0px 0px 20px 0px rgba(3, 26, 72, 0.5);
+    border-radius: 4px;
+    background: rgba(9, 50, 143, 0.85);
+    z-index: 10;
+    display: none;
+    &::before {
+      content: '';
+      width: 0;
+      height: 0;
+      border: vw(5) solid;
+      position: absolute;
+      bottom: -20px;
+      left: 70px;
+      border-color: rgba(9, 50, 143, 0.85) transparent transparent;
     }
   }
 }

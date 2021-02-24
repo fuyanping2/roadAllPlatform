@@ -282,6 +282,7 @@ export default {
               color: "blue",
               name: "发现",
               time: "2021-02-18 10:27:20",
+              desc: '占道经营'
             },
             {
               color: "red",
@@ -315,6 +316,7 @@ export default {
               color: "blue",
               name: "发现",
               time: "2021-02-20 01:00:00",
+              desc: '停车场库联网异常'
             },
             {
               color: "red",
@@ -348,6 +350,7 @@ export default {
               color: "blue",
               name: "发现",
               time: "2021-02-01 01:00:00",
+              desc: '维修档案未上传'
             },
             {
               color: "red",
@@ -443,6 +446,12 @@ export default {
   .fensa {
     background: #02072d;
     position: relative;
+    .el-dialog__header {
+      padding: 0;
+    }
+    .el-dialog__body {
+      padding: 0;
+    }
 
     .closeBtn {
       width: vw(26);
@@ -680,13 +689,12 @@ export default {
       width: 100%;
       height: vw(39);
       line-height: vw(39);
-      background: rgba(13, 57, 133, 0.6);
-      box-shadow: rgba(153, 204, 255, 0.18) 0 0 0.05rem 0.01rem inset;
       font-size: vw(16);
       font-weight: bold;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      border-bottom: 1px solid #1436ab;
       .thead {
         text-align: center;
         height: 100%;
@@ -706,6 +714,7 @@ export default {
       }
       .thead5 {
         flex: 1;
+        border-right: none;
       }
     }
     .table-body {
@@ -739,12 +748,12 @@ export default {
               overflow: hidden;
               white-space: nowrap;
               text-overflow: ellipsis;
-              box-sizing: border-box;
               padding: 0 vw(4);
+              box-sizing: border-box;
             }
             .table-foncom1 {
               width: 22%;
-              border-left: 1px solid #1436ab;
+              // border-left: 1px solid #111e47;
             }
             .table-foncom2 {
               width: 13%;
@@ -761,7 +770,7 @@ export default {
               height: vh(84.5);
               box-sizing: border-box;
               padding: 0 vw(50);
-              border-right: 1px solid #1436ab;
+              // border-right: 1px solid #1436ab;
             }
           }
         }
