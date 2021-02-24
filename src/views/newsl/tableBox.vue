@@ -368,8 +368,7 @@ export default {
     height: 44px;
     background: linear-gradient(
       92deg,
-      rgba(8, 37, 183, 0.59),
-      rgba(1, 180, 255, 0.59),
+      rgba(1, 180, 255, 0.2),
       rgba(1, 17, 73, 1)
     );
     padding: 0 vw(22);
