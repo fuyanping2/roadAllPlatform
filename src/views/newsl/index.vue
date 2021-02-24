@@ -202,8 +202,12 @@ export default {
           height: vh(42);
           line-height: vh(42);
           text-align: center;
-          background: linear-gradient(92deg, #0825b7, #014fff);
-          opacity: 0.59;
+          background: linear-gradient(
+            92deg,
+            rgba(8, 37, 183, 0.59),
+            rgba(1, 180, 255, 0.59),
+            rgba(1, 17, 73, 1)
+          );
           z-index: 1;
           span {
             font-size: vw(24);
