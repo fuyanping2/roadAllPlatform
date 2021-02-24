@@ -33,6 +33,9 @@ body {
   line-height: 1;
   user-select: none;
 }
+.btnid:hover{
+  transform:scale(1.2);
+}
 div {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;

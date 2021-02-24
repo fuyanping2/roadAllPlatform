@@ -135,45 +135,7 @@ export default class Map {
             </div>
           </div>
       `
-    } else if (curName == '公交站点分布') {
-      return `
-          <div class="info-win">
-            <div class="win-triangle"></div>
-            <div class="closeBtn"></div>
-            <div class="info-box">
-              <div class="info-content">
-                <div class="info-list"> 站点名称：${row.name || '--'}</div>
-                <div class="info-list"> 路名：${row.road_name || '--'}</div>
-                <div class="info-list"> 地址：${row.address ||
-        '--'}</div>
-                <div class="info-list"> 环域：${row.area || '--'}</div>
-                <div class="info-list"> 区属：${row.district || '--'}</div>
-                <div class="info-list"> 车向：${row.region || '--'}</div>
-                <div class="info-list"> 街镇：${row.town || '--'}</div>
-              </div>
-            </div>
-          </div>
-      `
-    } else if (curName == '公交首末站分布') {
-      return `
-          <div class="info-win">
-            <div class="win-triangle"></div>
-            <div class="closeBtn"></div>
-            <div class="info-box">
-              <div class="info-content">
-                <div class="info-list"> 站点名称：${row.name || '--'}</div>
-                <div class="info-list"> 路名：${row.road_name || '--'}</div>
-                <div class="info-list"> 地址：${row.address ||
-        '--'}</div>
-                <div class="info-list"> 环域：${row.area || '--'}</div>
-                <div class="info-list"> 区属：${row.district || '--'}</div>
-                <div class="info-list"> 车向：${row.region || '--'}</div>
-                <div class="info-list"> 街镇：${row.town || '--'}</div>
-              </div>
-            </div>
-          </div>
-      `
-    }
+    } 
 
   }
   setContentType1 (row) {
