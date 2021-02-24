@@ -271,17 +271,104 @@ export default {
       tabList: ['停车', '客运', '单车', '货运', '汽修', '道路'],
       findVisible: [
         {
-          entyName: '9999',
-          taskName: '9999',
-          occurStreet: '9999',
-          handleDept: '9999',
+          entyName: '上海市浦东新区洋泾街道崮山路931号蓝星大厦附近汽修企业',
+          taskName: '占道经营',
+          occurStreet: '曹路镇',
+          handleDept: '城管执法局',
+          currentStatus: "推送",
+          dispatchTarget: '推送至大数据中心',
+          zhuangtai: [
+            {
+              color: "blue",
+              name: "发现",
+              time: "2021-02-18 10:27:20",
+            },
+            {
+              color: "red",
+              name: "推送",
+              time: "2021-02-22 17:37:39",
+            },
+            {
+              color: "grey",
+              name: "接收",
+              time: null,
+              desc: null
+            },
+            {
+              color: "grey",
+              name: "反馈",
+              time: null,
+              url: null,
+              desc: null
+            }
+          ]
         },
         {
-          entyName: '9999',
-          taskName: '9999',
-          occurStreet: '9999',
-          handleDept: '9999',
-        }
+          entyName: '上海市浦东新区高桥镇天鹅泉公寓附近汽修企业',
+          taskName: '停车场库联网异常',
+          occurStreet: '陆家嘴街道',
+          handleDept: '停车科',
+          currentStatus: "反馈",
+          dispatchTarget: '委内处置',
+          zhuangtai: [
+            {
+              color: "blue",
+              name: "发现",
+              time: "2021-02-20 01:00:00",
+            },
+            {
+              color: "red",
+              name: "推送",
+              time: "2021-02-20 02:00:00",
+            },
+            {
+              color: "blue",
+              name: "接收",
+              time: '2021-02-20 02:00:10',
+              desc: null
+            },
+            {
+              color: "green",
+              name: "反馈",
+              time: '2021-02-21 01:00:00',
+              url: null,
+              desc: null
+            }
+          ]
+        },
+        {
+          entyName: '上海川曦汽车技术服务有限公司',
+          taskName: '维修档案未上传',
+          occurStreet: '川沙新镇',
+          handleDept: '汽修科',
+          currentStatus: "反馈",
+          dispatchTarget: '协同接收',
+          zhuangtai: [
+            {
+              color: "blue",
+              name: "发现",
+              time: "2021-02-01 01:00:00",
+            },
+            {
+              color: "red",
+              name: "推送",
+              time: "2021-02-01 02:00:00",
+            },
+            {
+              color: "blue",
+              name: "接收",
+              time: '2021-02-01 02:00:10',
+              desc: null
+            },
+            {
+              color: "green",
+              name: "反馈",
+              time: '2021-02-04 01:00:00',
+              url: null,
+              desc: null
+            }
+          ]
+        },
       ],
       swipertable: null,
       statusData: [],
@@ -296,6 +383,9 @@ export default {
   created () {
   },
   methods: {
+    replycloseSa () {
+      this.replyflag = false
+    },
     clickTab (item, index) {
       this.curTabIndex = index
     },
@@ -348,7 +438,186 @@ export default {
 .table-box {
   .swiper-slide {
     width: 100%;
-    height: vh(85) !important;
+    height: vh(84.5) !important;
+  }
+  .fensa {
+    background: #02072d;
+    position: relative;
+
+    .closeBtn {
+      width: vw(26);
+      height: vh(26);
+      background: url('../../assets/image/two/close_2@3x.png') no-repeat;
+      background-size: contain;
+      cursor: pointer;
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+  }
+  .fensa2 {
+    .reply-dialog {
+      width: vw(896);
+      height: vw(730);
+      background: url('../../assets/image/two/bj_big@3x.png');
+      background-size: 100% 100%;
+      position: relative;
+      //标题
+      .dialog-title {
+        width: 100%;
+        height: vw(44);
+        line-height: vw(44);
+        padding-left: vw(65);
+        font-size: vw(24);
+        position: relative;
+        color: #fff;
+        .replycloseBtn {
+          position: absolute;
+          right: vw(6);
+          top: vw(6);
+          width: vw(26);
+          height: vw(26);
+          background: url('../../assets/image/two/close@3x.png') no-repeat;
+          background-size: contain;
+          cursor: pointer;
+        }
+      }
+      //中间的焦点图
+      .dialog-banner {
+        width: vw(456);
+        height: vw(335);
+        margin: vw(20) auto;
+      }
+      .dialog-banner1 {
+        background: url('../../assets/image/two/liuc1@3x.png') no-repeat;
+        background-size: 100% 100%;
+      }
+      .dialog-banner2 {
+        background: url('../../assets/image/two/liuc2@3x.png') no-repeat;
+        background-size: 100% 100%;
+      }
+      .dialog-banner3 {
+        background: url('../../assets/image/two/liuc3@3x.png') no-repeat;
+        background-size: 100% 100%;
+      }
+      .dialog-banner4 {
+        background: url('../../assets/image/two/liuc4@3x.png') no-repeat;
+        background-size: 100% 100%;
+      }
+      .dialog-banner5 {
+        background: url('../../assets/image/two/zt1@3x.png') no-repeat;
+        background-size: 100% 100%;
+      }
+      .dialog-banner6 {
+        background: url('../../assets/image/two/zt2@3x.png') no-repeat;
+        background-size: 100% 100%;
+      }
+      .dialog-banner7 {
+        background: url('../../assets/image/two/zt3@3x.png') no-repeat;
+        background-size: 100% 100%;
+      }
+      .dialog-banner8 {
+        background: url('../../assets/image/two/zt4@3x.png') no-repeat;
+        background-size: 100% 100%;
+      }
+      //列表
+      .dialog-main {
+        color: #fff;
+        font-size: vw(19);
+
+        .rightsa {
+          display: flex;
+          justify-content: flex-start;
+          .leftsa {
+            width: vw(112);
+            height: 100%;
+          }
+          .saul {
+            display: flex;
+            flex-direction: column;
+            box-sizing: border-box;
+            padding: vw(15);
+            position: relative;
+            flex: 1;
+            // min-height: vw(300);
+            .lineprocess {
+              position: absolute;
+              top: 0;
+              left: vw(22);
+              width: vw(17);
+              height: 100%;
+              background: url('../../assets/image/two/down@3x.png') no-repeat;
+              background-size: 100% 100%;
+            }
+            .sali {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              margin-bottom: vw(20);
+              position: relative;
+              z-index: 12;
+
+              .chakantupi {
+                position: absolute;
+                top: 50%;
+                left: vw(-60);
+                width: vw(104);
+                height: vw(32);
+                background: url('../../assets/image/two/bj_7_2@3x.png')
+                  no-repeat;
+                background-size: 100% 100%;
+                text-align: center;
+                line-height: vw(32);
+                margin-right: vw(8);
+                transform: translate(-50%, -50%);
+              }
+              .div-standout {
+                width: vw(122);
+                height: vw(33);
+                background: url('../../assets/image/two/img_blue@3x.png')
+                  no-repeat;
+                background-size: 100% 100%;
+                text-indent: vw(60);
+                line-height: vw(33);
+                color: #019eff;
+                margin-right: vw(8);
+                font-weight: bold;
+              }
+              .div-standoutactive {
+                background: url('../../assets/image/two/img_yellow@3x.png')
+                  no-repeat;
+                background-size: 100% 100%;
+                color: #ffd25e;
+              }
+              .span-standout {
+                flex: 1;
+                line-height: vw(26);
+              }
+            }
+          }
+        }
+      }
+    }
+    .reply-dialog ::-webkit-scrollbar {
+      width: 8px;
+      height: 116px;
+      background-color: #f5f5f5;
+      border-radius: 4px;
+    }
+
+    /*定义滚动条轨道 内阴影+圆角*/
+    .reply-dialog ::-webkit-scrollbar-track {
+      -webkit-box-shadow: inset 0 0 6px rgba(71, 195, 191, 0.3);
+      border-radius: 10px;
+      background-color: #f5f5f5;
+    }
+
+    /*定义滑块 内阴影+圆角*/
+    .reply-dialog ::-webkit-scrollbar-thumb {
+      border-radius: 10px;
+      -webkit-box-shadow: inset 0 0 6px rgba(134, 213, 218, 0.3);
+      background-color: rgb(36, 17, 94);
+    }
   }
 }
 </style>
@@ -442,15 +711,16 @@ export default {
     .table-body {
       flex: 1;
       font-size: vw(18);
+      overflow: hidden;
       cursor: pointer;
       #swiper1 {
+        flex: 1;
         width: 100%;
-        height: 100%;
+        height: vh(168);
         overflow: hidden;
         .swiper-slide {
           width: 100%;
-          height: vh(85);
-
+          height: vh(84.5);
           .allData {
             width: 100%;
             // height: vw(79);
@@ -463,8 +733,8 @@ export default {
             .table-foncom {
               font-size: vw(18);
               text-align: center;
-              height: vh(85);
-              line-height: vh(85);
+              height: vh(84.5);
+              line-height: vh(84.5);
               border-right: 1px solid #1436ab;
               overflow: hidden;
               white-space: nowrap;
@@ -488,9 +758,9 @@ export default {
             }
             .statusSa {
               flex: 1;
-              height: vh(85);
+              height: vh(84.5);
               box-sizing: border-box;
-              padding: 0 vw(90);
+              padding: 0 vw(50);
               border-right: 1px solid #1436ab;
             }
           }

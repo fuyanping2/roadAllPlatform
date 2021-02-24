@@ -107,13 +107,14 @@ export default {
       .nameList {
         position: absolute;
         top: vw(-34);
-        font-size: vw(17);
+        font-size: vw(15);
         margin-left: vw(-17);
         width: vw(52);
         height: vh(26);
         line-height: vh(26);
       }
       .namebjy {
+        color: #fff;
         background: url('../../assets/image/two/qp.png');
         background-size: 100% 100%;
         text-align: center;
@@ -122,9 +123,10 @@ export default {
       .timeList {
         position: absolute;
         top: vw(16);
-        font-size: vw(17);
-        margin-left: vw(-80);
-        width: vw(159);
+        font-size: vw(12);
+        margin-left: vw(-50);
+        width: vw(100);
+        text-align: center;
       }
       .ciclsa {
         position: absolute;
