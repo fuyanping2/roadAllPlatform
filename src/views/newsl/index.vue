@@ -51,8 +51,10 @@ export default {
     MyMap = new Map({ el: "compreMap" });
   },
   created () {
+    console.log(resource.weatherIcon)
   },
   methods: {
+
 
   }
 }

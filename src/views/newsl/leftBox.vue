@@ -5,7 +5,7 @@
       <div class="rb"></div>
       <div class="tit">
         <span>停车</span>
-        <img src="../../assets/image/next_page_nor@3x.png" alt="">
+        <img class="btnid" style="cursor:pointer" src="../../assets/image/next_page_nor@3x.png" alt="">
       </div>
       <div class="center-box">
         <div class="num-box">
@@ -114,7 +114,7 @@
       <div class="rb"></div>
       <div class="tit">
         <span>客运</span>
-        <img src="../../assets/image/next_page_nor@3x.png" alt="">
+          <img  class="btnid" style="cursor:pointer" src="../../assets/image/next_page_nor@3x.png" alt="">
       </div>
       <div class="center-box">
         <div class="num-box">
@@ -186,7 +186,7 @@
       <div class="tit">
 
         <span>单车</span>
-        <img src="../../assets/image/next_page_nor@3x.png" alt="">
+         <img   class="btnid" style="cursor:pointer" src="../../assets/image/next_page_nor@3x.png" alt="">
       </div>
       <div style="display:flex; justify-content: space-between;box-sizing:border-box;padding:20px 18px">
         <div class="transport-box transport-box1">
@@ -265,7 +265,7 @@ export default {
       background: linear-gradient(
         92deg,
         rgba(8, 37, 183, 0.59),
-        rgba(1, 180, 255, 0.59),
+        RGBA(7, 50, 132, 1),
         rgba(1, 17, 73, 1)
       );
       font-size: vh(24);
@@ -337,7 +337,7 @@ export default {
         flex-direction: column;
         margin-left: vw(4);
         .minri {
-          margin-top: vh(14);
+          margin-top: vh(10);
         }
         .font1 {
           font-size: vh(18);

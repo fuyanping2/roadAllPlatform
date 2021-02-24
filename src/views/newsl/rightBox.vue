@@ -3,7 +3,7 @@
     <div class="transport all-rl">
       <div class="tit">
         <span>货运</span>
-        <img src="../../assets/image/two/next_page_pre@3x.png" alt="" />
+         <img class="btnid" style="cursor:pointer" src="../../assets/image/next_page_nor@3x.png" alt="">
       </div>
       <div class="content">
         <div class="t-top">
@@ -13,7 +13,7 @@
           </div>
           <div class="top-r">
             <span class="title">危运企业</span>
-            <div class="num">43070<span>辆</span></div>
+            <div class="num">54<span>辆</span></div>
           </div>
         </div>
         <div class="line-tb"></div>
@@ -21,11 +21,11 @@
         <div class="t-bottom">
           <div class="bottom-l">
             <span class="title">普运企业</span>
-            <div class="num">43070<span>辆</span></div>
+            <div class="num">4081<span>辆</span></div>
           </div>
           <div class="bottom-r">
             <span class="title">发现事件</span>
-            <div class="num orange">43070<span>起</span></div>
+            <div class="num orange">8<span>起</span></div>
           </div>
         </div>
       </div>
@@ -34,7 +34,7 @@
     <div class="repaire all-rl">
       <div class="tit">
         <span>汽修</span>
-        <img src="../../assets/image/two/next_page_pre@3x.png" alt="" />
+         <img class="btnid" style="cursor:pointer" src="../../assets/image/next_page_nor@3x.png" alt="">
       </div>
       <div class="content">
         <div class="r-top">
@@ -47,9 +47,11 @@
           <div class="num-list">
             <div class="num">
               <span>2</span>
+              <span>5</span>
+              <span>8</span>
               <span>2</span>
-              <span>2</span>
-              <span>2</span>
+              <span>4</span>
+              <span>1</span>
             </div>
             <span class="subtit">辆次</span>
           </div>
@@ -60,12 +62,12 @@
     <div class="route all-rl">
       <div class="tit">
         <span>道路</span>
-        <img src="../../assets/image/two/next_page_pre@3x.png" alt="" />
+         <img class="btnid" style="cursor:pointer" src="../../assets/image/next_page_nor@3x.png" alt="">
       </div>
       <div class="content">
         <div class="r-top">
           <div class="title">发现事件</div>
-          <div class="num">43070<span>辆</span></div>
+          <div class="num">7<span>辆</span></div>
         </div>
         <lr-common></lr-common>
         <div class="r-bottom">
@@ -103,16 +105,16 @@ export default {
       routeList: [
         {
           name: '道路完好率',
-          rate: '100',
+          rate: '99.99',
         }, {
           name: '道路保洁率',
-          rate: '98',
+          rate: '100',
         }, {
           name: '桥梁巡检率',
-          rate: '4',
+          rate: '100',
         }, {
           name: '桥梁完损率',
-          rate: '35',
+          rate: '99.89',
         },
       ]
     }
@@ -145,25 +147,28 @@ export default {
   font-weight: 400;
   .all-rl {
     border: 1px solid rgba(55, 85, 218, 0.3);
+      box-shadow: 0px 0px vh(16) 0 rgba(2, 36, 108, 1) inset;
     box-sizing: border-box;
     .tit {
       display: flex;
       justify-content: space-between;
       align-items: center;
       height: vh(44);
-      background: linear-gradient(92deg, #0825b7, #01b4ff);
-      opacity: 0.3;
+      background: linear-gradient(  92deg,
+        rgba(8, 37, 183, 0.59),
+        RGBA(7, 50, 132, 1),
+        rgba(1, 17, 73, 1));
       font-size: vh(24);
       padding: 0 vw(20);
       span {
         font-family: FZDaHei-B02S;
-        font-weight: 400;
+        font-weight: 800;
         color: #0096ff;
         line-height: vh(44);
         background: linear-gradient(
-          92deg,
-          #0072ff 0%,
-          #00eaff 48.8525390625%,
+            92deg,
+          #0072ff 4%,
+          #2ce6f7 48%,
           #01aaff 100%
         );
         -webkit-background-clip: text;
