@@ -4,15 +4,9 @@
       <div class="lb"></div>
       <div class="rb"></div>
       <div class="tit">
-        <span>停车</span>
+        <span class="btnid" @click="toSearchProduct(1)">停车</span>
         <div>
-          <img
-            @click="toSearchProduct(1)"
-            class="btnid"
-            style="cursor:pointer;margin-right:10px"
-            src="../../assets/image/icon_0_1@3x.png"
-            alt
-          />
+         
           <img
             @click="tothree(1)"
             class="btnid"
@@ -128,15 +122,8 @@
       <div class="lb"></div>
       <div class="rb"></div>
       <div class="tit">
-        <span>客运</span>
+        <span class="btnid" style="cursor:pointer" @click="toSearchProduct(2)">客运</span>
         <div>
-          <img
-            @click="toSearchProduct(2)"
-            class="btnid"
-            style="cursor:pointer;margin-right:10px"
-            src="../../assets/image/icon_0_1@3x.png"
-            alt
-          />
           <img
           @click="tothree(2)"
             class="btnid"
@@ -214,15 +201,9 @@
       <div class="lb"></div>
       <div class="rb"></div>
       <div class="tit">
-        <span>单车</span>
+        <span class="btnid" style="cursor:pointer" @click="toSearchProduct(3)">单车</span>
         <div>
-          <img
-            @click="toSearchProduct(3)"
-            class="btnid"
-            style="cursor:pointer;margin-right:10px"
-            src="../../assets/image/icon_0_1@3x.png"
-            alt
-          />
+         
           <img
             class="btnid"
             @click="tothree(3)"

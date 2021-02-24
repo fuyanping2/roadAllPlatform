@@ -2,15 +2,8 @@
   <div class="right-boxsa">
     <div class="transport all-rl">
       <div class="tit">
-        <span>货运</span>
+        <span class="btnid" style="cursor:pointer" @click="toSearchProduct(4)">货运</span>
          <div>
-          <img
-             @click="toSearchProduct(4)"
-            class="btnid"
-            style="cursor:pointer;margin-right:10px"
-            src="../../assets/image/icon_0_1@3x.png"
-            alt
-          />
           <img
             class="btnid"
             @click="tothree(1)"
@@ -48,15 +41,9 @@
     </div>
     <div class="repaire all-rl">
       <div class="tit">
-        <span>汽修</span>
+        <span class="btnid" style="cursor:pointer" @click="toSearchProduct(5)">汽修</span>
          <div>
-          <img
-              @click="toSearchProduct(5)"
-            class="btnid"
-            style="cursor:pointer;margin-right:10px"
-            src="../../assets/image/icon_0_1@3x.png"
-            alt
-          />
+        
           <img
           @click="tothree(2)"
             style="cursor:pointer"
@@ -90,15 +77,9 @@
     </div>
     <div class="route all-rl">
       <div class="tit">
-        <span>道路</span>
+        <span class="btnid" style="cursor:pointer" @click="toSearchProduct(6)">道路</span>
         <div>
-          <img
-            @click="toSearchProduct(6)"
-            class="btnid"
-            style="cursor:pointer;margin-right:10px"
-            src="../../assets/image/icon_0_1@3x.png"
-            alt
-          />
+         
           <img
             class="btnid"
             @click="tothree(3)"
@@ -184,13 +165,13 @@ export default {
     tothree(val){
        switch (val) {
         case 1:
-          window.open('http://140.207.49.34:8888/')
+          window.open('http://101.231.47.116:18889/parkingView/#/')
           break;
         case 2:
            window.open('http://180.167.126.120:81/newVehiclerepair/#/fourRevision')
           break;
         case 3:
-          window.open('http://106.14.198.128:18181/viewsharebike/#/')
+          window.open('http://117.184.126.50:8686/hbzs/pdcsdnNew.jsp')
           break;
      
         default:
@@ -236,8 +217,8 @@ export default {
         -webkit-text-fill-color: transparent;
       }
       img {
-        width: vw(22);
-        height: vh(28);
+        // width: vw(22);
+        // height: vh(28);
       }
     }
     &.transport {

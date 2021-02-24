@@ -35,7 +35,11 @@ import tableBox from "./tableBox.vue";
 import qxdata from "./qx.json";
 import kydata from "./ky.json";
 import dcdata from "./dc.json";
+import tcdata from "./tc.json";
+import dldata from "./dl.json";
 import lrArrow from "../../components/lrArrow";
+
+import * as http from "@/libs/http";
 
 let MyMap = null; // 地图实例
 export default {
@@ -53,39 +57,46 @@ export default {
   mounted() {
     MyMap = new Map({ el: "compreMap" });
   },
-  created() {},
+  created() {
+  },
   methods: {
     toClick(msg) {
-       MyMap.mapcle()
+      MyMap.mapcle();
       switch (msg) {
         case 1:
-          // this.initpoint()
+              tcdata.forEach((iteam, index) => {
+                if (iteam.points) {
+                  if ((iteam.points)[0].lon&&(iteam.points)[0].lat)
+                  iteam.lng = parseFloat((iteam.points)[0].lon);
+                  iteam.lat = parseFloat((iteam.points)[0].lat);
+                }
+            });
+            this.initpoint(tcdata, msg);
           break;
         case 2:
-           this.initpoint(kydata,msg)
+          this.initpoint(kydata, msg);
           break;
         case 3:
-           this.initpoint(dcdata,msg)
+          this.initpoint(dcdata, msg);
           break;
         case 4:
           //  this.initpoint(kydata,msg)
           break;
         case 5:
-           this.initpoint(qxdata,msg)
+          this.initpoint(qxdata, msg);
           break;
         case 6:
-          //  this.initpoint(kydata,msg)
+           this.initpoint(dldata,msg)
           break;
         default:
       }
     },
     initpoint(data, icon) {
-      console.log(data)
+      // console.log(data);
       data.forEach(iteam => {
-        if(iteam.lng&&iteam.lat){
+        if (iteam.lng && iteam.lat) {
           MyMap.createPoint(iteam, icon);
         }
-        
       });
       // MyMap.createPoint
     }
