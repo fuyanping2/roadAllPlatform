@@ -7,7 +7,7 @@
           <img
             class="btnid"
             @click="tothree(1)"
-            style="cursor:pointer"
+            style="cursor: pointer"
             src="../../assets/image/next_page_nor@3x.png"
             alt
           />
@@ -45,8 +45,8 @@
          <div>
         
           <img
-          @click="tothree(2)"
-            style="cursor:pointer"
+            @click="tothree(2)"
+            style="cursor: pointer"
             src="../../assets/image/next_page_nor@3x.png"
             alt
           />
@@ -83,7 +83,7 @@
           <img
             class="btnid"
             @click="tothree(3)"
-            style="cursor:pointer"
+            style="cursor: pointer"
             src="../../assets/image/next_page_nor@3x.png"
             alt
           />
@@ -160,20 +160,20 @@ export default {
   },
   methods: {
     toSearchProduct (val) {
-      this.$emit('parentEvent',val)
+      this.$emit('parentEvent', val)
     },
-    tothree(val){
-       switch (val) {
+    tothree (val) {
+      switch (val) {
         case 1:
           window.open('http://101.231.47.116:18889/parkingView/#/')
           break;
         case 2:
-           window.open('http://180.167.126.120:81/newVehiclerepair/#/fourRevision')
+          window.open('http://180.167.126.120:81/newVehiclerepair/#/fourRevision')
           break;
         case 3:
           window.open('http://117.184.126.50:8686/hbzs/pdcsdnNew.jsp')
           break;
-     
+
         default:
       }
     }
@@ -189,17 +189,19 @@ export default {
   font-weight: 400;
   .all-rl {
     border: 1px solid rgba(55, 85, 218, 0.3);
-      box-shadow: 0px 0px vh(16) 0 rgba(2, 36, 108, 1) inset;
+    box-shadow: 0px 0px vh(16) 0 rgba(2, 36, 108, 1) inset;
     box-sizing: border-box;
     .tit {
       display: flex;
       justify-content: space-between;
       align-items: center;
       height: vh(44);
-      background: linear-gradient(  92deg,
+      background: linear-gradient(
+        92deg,
         rgba(8, 37, 183, 0.59),
         RGBA(7, 50, 132, 1),
-        rgba(1, 17, 73, 1));
+        rgba(1, 17, 73, 1)
+      );
       font-size: vh(24);
       padding: 0 vw(20);
       span {
@@ -208,7 +210,7 @@ export default {
         color: #0096ff;
         line-height: vh(44);
         background: linear-gradient(
-            92deg,
+          92deg,
           #0072ff 4%,
           #2ce6f7 48%,
           #01aaff 100%
@@ -425,7 +427,7 @@ export default {
                 position: absolute;
                 top: vh(10);
                 right: vw(10);
-                font-size: vw(34);
+                font-size: vw(28);
                 font-family: DIN;
                 font-weight: bold;
                 color: #e5efff;
