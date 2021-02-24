@@ -26,7 +26,7 @@ body {
   width: 100%;
   height: 100%;
   font-size: vw(16);
-  font-family: "MicrosoftYaHei", "Helvetica Neue", Helvetica, "PingFang SC",
+  font-family: "MicrosoftYaHei","Microsoft YaHei","Helvetica Neue", Helvetica, "PingFang SC",
     "Hiragino Sans GB", Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
