@@ -79,30 +79,37 @@ export default class Map {
   removePointGroup () {
     this.pointGroup.clearOverlays()
   }
+  mapcle(){
+    this.map.clearMap()
+  }
 
   // 创建点标记
-  createPoint (lng, lat, icon, index, id, row, curName) {
+  createPoint (row,num) {
     // console.log(row,'创建类别点标记')
+    let icon=num==1?require("../../assets/image/tc.png"):num==2?require("../../assets/image/ky.png"):num==3?require("../../assets/image/dc.png")
+    :num==4?require("../../assets/image/hy.png"):num==5?require("../../assets/image/qx.png"):num==6?require("../../assets/image/dl.png"):'';
     let point = new AMap.Marker({
-      position: new AMap.LngLat(lng, lat),
+      position: new AMap.LngLat(row.lng, row.lat),
       offset: new AMap.Pixel(-14, -16),
       icon: new AMap.Icon({
         size: new AMap.Size(26, 32),
         image: icon,
         imageSize: new AMap.Size(26, 32)
       }), // 添加 Icon 图标 URL
-      extData: { index, id, row }
+      map:this.map,
+      extData: {row }
     })
 
     point.on('click', e => {
       let str = e.target.Ce.extData.row
-      if (curName != '公交场站分布') {
-        this.createInfoWindow(str, curName)
-      } else {
-        this.createInfoWindow1(str)
-      }
+      // if (curName != '公交场站分布') {
+      //   this.createInfoWindow(str, curName)
+      // } else {
+      //   this.createInfoWindow1(str)
+      // }
     })
-    return point
+
+    this.map.add(point)
   }
 
   // 打开信息窗口

@@ -5,7 +5,22 @@
       <div class="rb"></div>
       <div class="tit">
         <span>停车</span>
-        <img class="btnid" style="cursor:pointer" src="../../assets/image/next_page_nor@3x.png" alt="">
+        <div>
+          <img
+            @click="toSearchProduct(1)"
+            class="btnid"
+            style="cursor:pointer;margin-right:10px"
+            src="../../assets/image/icon_0_1@3x.png"
+            alt
+          />
+          <img
+            @click="tothree(1)"
+            class="btnid"
+            style="cursor:pointer"
+            src="../../assets/image/next_page_nor@3x.png"
+            alt
+          />
+        </div>
       </div>
       <div class="center-box">
         <div class="num-box">
@@ -114,7 +129,22 @@
       <div class="rb"></div>
       <div class="tit">
         <span>客运</span>
-          <img  class="btnid" style="cursor:pointer" src="../../assets/image/next_page_nor@3x.png" alt="">
+        <div>
+          <img
+            @click="toSearchProduct(2)"
+            class="btnid"
+            style="cursor:pointer;margin-right:10px"
+            src="../../assets/image/icon_0_1@3x.png"
+            alt
+          />
+          <img
+          @click="tothree(2)"
+            class="btnid"
+            style="cursor:pointer"
+            src="../../assets/image/next_page_nor@3x.png"
+            alt
+          />
+        </div>
       </div>
       <div class="center-box">
         <div class="num-box">
@@ -184,11 +214,27 @@
       <div class="lb"></div>
       <div class="rb"></div>
       <div class="tit">
-
         <span>单车</span>
-         <img   class="btnid" style="cursor:pointer" src="../../assets/image/next_page_nor@3x.png" alt="">
+        <div>
+          <img
+            @click="toSearchProduct(3)"
+            class="btnid"
+            style="cursor:pointer;margin-right:10px"
+            src="../../assets/image/icon_0_1@3x.png"
+            alt
+          />
+          <img
+            class="btnid"
+            @click="tothree(3)"
+            style="cursor:pointer"
+            src="../../assets/image/next_page_nor@3x.png"
+            alt
+          />
+        </div>
       </div>
-      <div style="display:flex; justify-content: space-between;box-sizing:border-box;padding:20px 18px">
+      <div
+        style="display:flex; justify-content: space-between;box-sizing:border-box;padding:20px 18px"
+      >
         <div class="transport-box transport-box1">
           <div class="right-num">
             <span class="font1">活跃率</span>
@@ -201,7 +247,10 @@
         <div class="transport-box transport-box1">
           <div class="right-num">
             <span class="font1">发现事件</span>
-            <div class="minri"  style="display:flex; justify-content: space-between;box-sizing:border-box;padding-right:18px">
+            <div
+              class="minri"
+              style="display:flex; justify-content: space-between;box-sizing:border-box;padding-right:18px"
+            >
               <span class="font4" style="color:#FF9000">3</span>
               <span class="font3" style="color:#FF9000">起</span>
             </div>
@@ -223,7 +272,26 @@ export default {
   },
   mounted() {},
   created() {},
-  methods: {}
+  methods: {
+    toSearchProduct(val) {
+      this.$emit("parentEvent", val);
+    },
+    tothree(val){
+       switch (val) {
+        case 1:
+          window.open('http://10.1.30.211:18889/parkingView/#/')
+          break;
+        case 2:
+           window.open('http://219.233.18.234/busVisual/#/twoBus')
+          break;
+        case 3:
+          window.open('http://106.14.198.128:18181/viewsharebike/#/')
+          break;
+     
+        default:
+      }
+    }
+  }
 };
 </script>
 
@@ -261,7 +329,7 @@ export default {
       justify-content: space-between;
       align-items: center;
       box-sizing: border-box;
-       padding-right: vw(20);
+      padding-right: vw(20);
       background: linear-gradient(
         92deg,
         rgba(8, 37, 183, 0.59),
@@ -365,8 +433,8 @@ export default {
       justify-content: flex-start;
       box-sizing: border-box;
       padding-left: vw(24);
-      .right-num{
-        flex: 1
+      .right-num {
+        flex: 1;
       }
     }
     .dashboard-box {

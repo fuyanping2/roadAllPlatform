@@ -7,32 +7,37 @@
     </div>
     <div class="main">
       <div class="leftMainbox">
-        <left-box></left-box>
+        <left-box @parentEvent="toClick"></left-box>
       </div>
       <div class="map-box">
         <div class="map">
-          <div class="map-head"><span>GIS</span></div>
+          <div class="map-head">
+            <span>GIS</span>
+          </div>
           <div ref="compreMap" class="compreRight" id="compreMap"></div>
           <lr-arrow></lr-arrow>
         </div>
         <table-box></table-box>
       </div>
       <div class="rightMainbox">
-        <right-box></right-box>
+        <right-box @parentEvent="toClick"></right-box>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import Map from './myMap.js';
+import Map from "./myMap.js";
 import resource from "./resource.js";
-import leftBox from './leftBox.vue'
-import rightBox from './rightBox.vue'
-import tableBox from './tableBox.vue'
-import lrArrow from '../../components/lrArrow'
+import leftBox from "./leftBox.vue";
+import rightBox from "./rightBox.vue";
+import tableBox from "./tableBox.vue";
+import qxdata from "./qx.json";
+import kydata from "./ky.json";
+import dcdata from "./dc.json";
+import lrArrow from "../../components/lrArrow";
 
-let MyMap = null // 地图实例
+let MyMap = null; // 地图实例
 export default {
   components: {
     leftBox,
@@ -41,23 +46,51 @@ export default {
     lrArrow
   },
 
-  data () {
-    return {
-
-    }
+  data() {
+    return {};
   },
 
-  mounted () {
+  mounted() {
     MyMap = new Map({ el: "compreMap" });
   },
-  created () {
-    console.log(resource.weatherIcon)
-  },
+  created() {},
   methods: {
-
-
+    toClick(msg) {
+       MyMap.mapcle()
+      switch (msg) {
+        case 1:
+          // this.initpoint()
+          break;
+        case 2:
+           this.initpoint(kydata,msg)
+          break;
+        case 3:
+           this.initpoint(dcdata,msg)
+          break;
+        case 4:
+          //  this.initpoint(kydata,msg)
+          break;
+        case 5:
+           this.initpoint(qxdata,msg)
+          break;
+        case 6:
+          //  this.initpoint(kydata,msg)
+          break;
+        default:
+      }
+    },
+    initpoint(data, icon) {
+      console.log(data)
+      data.forEach(iteam => {
+        if(iteam.lng&&iteam.lat){
+          MyMap.createPoint(iteam, icon);
+        }
+        
+      });
+      // MyMap.createPoint
+    }
   }
-}
+};
 </script>
 <style lang="scss">
 </style>
@@ -65,7 +98,7 @@ export default {
 .third-revision {
   width: 100%;
   height: 100%;
-  background: url('../../assets/image/two/bj@3x.png');
+  background: url("../../assets/image/two/bj@3x.png");
   background-size: 100% 100%;
   display: flex;
   flex-direction: column;
@@ -81,7 +114,7 @@ export default {
     align-items: center;
     width: 100%;
     height: vw(61);
-    background: url('../../assets/image/two/img_top@3x.png') no-repeat;
+    background: url("../../assets/image/two/img_top@3x.png") no-repeat;
     background-size: 100% 100%;
     font-size: vw(18);
     color: rgba(76, 177, 255, 1);
