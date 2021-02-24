@@ -184,7 +184,7 @@
       <div class="lb"></div>
       <div class="rb"></div>
       <div class="tit">
-        
+
         <span>单车</span>
         <img src="../../assets/image/next_page_nor@3x.png" alt="">
       </div>
@@ -383,7 +383,7 @@ export default {
           text-align: center;
           left: vw(3);
           top: -100%;
-          font-size: vh(38);
+          font-size: vh(36);
           font-family: DS-Digital-Bold;
           font-weight: bold;
           margin-top: vh(40);
