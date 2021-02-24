@@ -10,7 +10,12 @@
         <left-box></left-box>
       </div>
       <div class="map-box">
-        <div ref="compreMap" class="compreRight" id="compreMap"></div>
+        <div class="map">
+          <div class="map-head"><span>GIS</span></div>
+          <div ref="compreMap" class="compreRight" id="compreMap"></div>
+          <lr-arrow></lr-arrow>
+        </div>
+        <table-box></table-box>
       </div>
       <div class="rightMainbox">
         <right-box></right-box>
@@ -24,12 +29,16 @@ import Map from './myMap.js';
 import resource from "./resource.js";
 import leftBox from './leftBox.vue'
 import rightBox from './rightBox.vue'
+import tableBox from './tableBox.vue'
+import lrArrow from '../../components/lrArrow'
 
 let MyMap = null // 地图实例
 export default {
   components: {
     leftBox,
     rightBox,
+    tableBox,
+    lrArrow
   },
 
   data () {
@@ -179,9 +188,45 @@ export default {
       flex: 1;
       height: 100%;
       margin: 0 vw(22) 0 vw(22);
-      #compreMap {
+      .map {
+        position: relative;
+        border: 1px solid rgba(55, 85, 218, 0.3);
+        margin-bottom: vh(20);
         width: 100%;
-        height: 100%;
+        height: vh(676);
+        .map-head {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: vh(42);
+          line-height: vh(42);
+          text-align: center;
+          background: linear-gradient(92deg, #0825b7, #014fff);
+          opacity: 0.59;
+          z-index: 1;
+          span {
+            font-size: vw(24);
+            font-weight: bold;
+            color: #0096ff;
+            background: linear-gradient(
+              92deg,
+              #0072ff 0%,
+              #00eaff 48.8525390625%,
+              #01aaff 100%
+            );
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+          }
+        }
+
+        #compreMap {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: vh(676);
+        }
       }
     }
     .rightMainbox {

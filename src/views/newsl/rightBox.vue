@@ -3,6 +3,7 @@
     <div class="transport all-rl">
       <div class="tit">
         <span>货运</span>
+        <img src="../../assets/image/two/next_page_pre@3x.png" alt="" />
       </div>
       <div class="content">
         <div class="t-top">
@@ -33,6 +34,7 @@
     <div class="repaire all-rl">
       <div class="tit">
         <span>汽修</span>
+        <img src="../../assets/image/two/next_page_pre@3x.png" alt="" />
       </div>
       <div class="content">
         <div class="r-top">
@@ -58,6 +60,7 @@
     <div class="route all-rl">
       <div class="tit">
         <span>道路</span>
+        <img src="../../assets/image/two/next_page_pre@3x.png" alt="" />
       </div>
       <div class="content">
         <div class="r-top">
@@ -144,11 +147,14 @@ export default {
     border: 1px solid rgba(55, 85, 218, 0.3);
     box-sizing: border-box;
     .tit {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       height: vh(44);
-      background: linear-gradient(92deg, #01b4ff, #0825b7);
-      opacity: 0.59;
+      background: linear-gradient(92deg, #0825b7, #01b4ff);
+      opacity: 0.3;
       font-size: vh(24);
-      text-align: right;
+      padding: 0 vw(20);
       span {
         font-family: FZDaHei-B02S;
         font-weight: 400;
@@ -162,7 +168,10 @@ export default {
         );
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
-        padding-right: vw(20);
+      }
+      img {
+        width: vw(22);
+        height: vh(28);
       }
     }
     &.transport {
