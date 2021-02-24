@@ -3,7 +3,7 @@
   <div class="third-revision">
     <div class="header-box">
       <div id="guang"></div>
-      <div class="tit">道路运输综合监管平台</div>
+      <div class="tit"></div>
     </div>
     <div class="main">
       <div class="leftMainbox">
@@ -69,12 +69,13 @@ export default {
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: vh(90);
+    height: vw(61);
     background: url('../../assets/image/two/img_top@3x.png') no-repeat;
-    background-size: 100% vh(90);
+    background-size: 100% 100%;
     font-size: vw(18);
     color: rgba(76, 177, 255, 1);
     overflow: hidden;
+    margin-top: vw(7);
 
     .time {
       position: absolute;
