@@ -3,7 +3,22 @@
     <div class="transport all-rl">
       <div class="tit">
         <span>货运</span>
-         <img class="btnid" style="cursor:pointer" src="../../assets/image/next_page_nor@3x.png" alt="">
+         <div>
+          <img
+             @click="toSearchProduct(4)"
+            class="btnid"
+            style="cursor:pointer;margin-right:10px"
+            src="../../assets/image/icon_0_1@3x.png"
+            alt
+          />
+          <img
+            class="btnid"
+            @click="tothree(1)"
+            style="cursor:pointer"
+            src="../../assets/image/next_page_nor@3x.png"
+            alt
+          />
+        </div>
       </div>
       <div class="content">
         <div class="t-top">
@@ -34,7 +49,21 @@
     <div class="repaire all-rl">
       <div class="tit">
         <span>汽修</span>
-         <img class="btnid" style="cursor:pointer" src="../../assets/image/next_page_nor@3x.png" alt="">
+         <div>
+          <img
+              @click="toSearchProduct(5)"
+            class="btnid"
+            style="cursor:pointer;margin-right:10px"
+            src="../../assets/image/icon_0_1@3x.png"
+            alt
+          />
+          <img
+          @click="tothree(2)"
+            style="cursor:pointer"
+            src="../../assets/image/next_page_nor@3x.png"
+            alt
+          />
+        </div>
       </div>
       <div class="content">
         <div class="r-top">
@@ -62,7 +91,22 @@
     <div class="route all-rl">
       <div class="tit">
         <span>道路</span>
-         <img class="btnid" style="cursor:pointer" src="../../assets/image/next_page_nor@3x.png" alt="">
+        <div>
+          <img
+            @click="toSearchProduct(6)"
+            class="btnid"
+            style="cursor:pointer;margin-right:10px"
+            src="../../assets/image/icon_0_1@3x.png"
+            alt
+          />
+          <img
+            class="btnid"
+            @click="tothree(3)"
+            style="cursor:pointer"
+            src="../../assets/image/next_page_nor@3x.png"
+            alt
+          />
+        </div>
       </div>
       <div class="content">
         <div class="r-top">
@@ -134,7 +178,24 @@ export default {
   created () {
   },
   methods: {
-
+    toSearchProduct (val) {
+      this.$emit('parentEvent',val)
+    },
+    tothree(val){
+       switch (val) {
+        case 1:
+          window.open('http://140.207.49.34:8888/')
+          break;
+        case 2:
+           window.open('http://180.167.126.120:81/newVehiclerepair/#/fourRevision')
+          break;
+        case 3:
+          window.open('http://106.14.198.128:18181/viewsharebike/#/')
+          break;
+     
+        default:
+      }
+    }
   }
 }
 </script>
