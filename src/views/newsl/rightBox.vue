@@ -1,27 +1,130 @@
 <template>
   <div class="right-boxsa">
     <div class="transport all-rl">
-      <div class="tit"><span>停车</span></div>
+      <div class="tit">
+        <span>货运</span>
+      </div>
+      <div class="content">
+        <div class="t-top">
+          <div class="top-l">
+            <span class="title">货运车辆</span>
+            <div class="num">43070<span>辆</span></div>
+          </div>
+          <div class="top-r">
+            <span class="title">危运企业</span>
+            <div class="num">43070<span>辆</span></div>
+          </div>
+        </div>
+        <div class="line-tb"></div>
+        <div class="line-tb1"></div>
+        <div class="t-bottom">
+          <div class="bottom-l">
+            <span class="title">普运企业</span>
+            <div class="num">43070<span>辆</span></div>
+          </div>
+          <div class="bottom-r">
+            <span class="title">发现事件</span>
+            <div class="num orange">43070<span>起</span></div>
+          </div>
+        </div>
+      </div>
+      <lr-arrow></lr-arrow>
     </div>
     <div class="repaire all-rl">
-      <div class="tit"><span>停车</span></div>
+      <div class="tit">
+        <span>汽修</span>
+      </div>
+      <div class="content">
+        <div class="r-top">
+          <div class="title">发现事件</div>
+          <div class="num">43070<span>辆</span></div>
+        </div>
+        <lr-common></lr-common>
+        <div class="r-bottom">
+          <div class="title">年度综合维修总量</div>
+          <div class="num-list">
+            <div class="num">
+              <span>2</span>
+              <span>2</span>
+              <span>2</span>
+              <span>2</span>
+            </div>
+            <span class="subtit">辆次</span>
+          </div>
+        </div>
+      </div>
+      <lr-arrow></lr-arrow>
     </div>
     <div class="route all-rl">
-      <div class="tit"><span>停车</span></div>
+      <div class="tit">
+        <span>道路</span>
+      </div>
+      <div class="content">
+        <div class="r-top">
+          <div class="title">发现事件</div>
+          <div class="num">43070<span>辆</span></div>
+        </div>
+        <lr-common></lr-common>
+        <div class="r-bottom">
+          <div class="route-list">
+            <div class="item" v-for="(item, index) in routeList" :key="index">
+              <div class="title">{{ item.name }}</div>
+              <div class="rate">{{ item.rate }}%</div>
+              <div class="process">
+                <span
+                  v-for="(items, indexs) in item.process"
+                  :key="indexs"
+                ></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <lr-arrow></lr-arrow>
     </div>
   </div>
 </template>
 
 <script>
 import countup from './scrolltime';
+import lrCommon from '../../components/lrCommon'
+import lrArrow from '../../components/lrArrow'
 export default {
   components: {
+    lrCommon,
+    lrArrow
   },
+  name: "rightBox",
   data () {
     return {
+      routeList: [
+        {
+          name: '道路完好率',
+          rate: '100',
+        }, {
+          name: '道路保洁率',
+          rate: '98',
+        }, {
+          name: '桥梁巡检率',
+          rate: '4',
+        }, {
+          name: '桥梁完损率',
+          rate: '35',
+        },
+      ]
     }
   },
   mounted () {
+    this.routeList.forEach((item, index) => {
+      if (parseFloat(item.rate) >= 100) {
+        this.$set(this.routeList[index], 'process', 10)
+      } else if (parseFloat(item.rate) <= 10) {
+        this.$set(this.routeList[index], 'process', 1)
+      } else if (parseFloat(item.rate) > 10 || parseFloat(item.rate) < 100) {
+        this.$set(this.routeList[index], 'process', parseFloat(item.rate.split('')[0]))
+      }
+    })
+    console.log(this.routeList)
   },
   created () {
   },
@@ -39,6 +142,7 @@ export default {
   font-weight: 400;
   .all-rl {
     border: 1px solid rgba(55, 85, 218, 0.3);
+    box-sizing: border-box;
     .tit {
       height: vh(44);
       background: linear-gradient(92deg, #01b4ff, #0825b7);
@@ -61,17 +165,239 @@ export default {
         padding-right: vw(20);
       }
     }
-  }
-  .transport {
-    height: vh(260);
-    margin-bottom: vh(20);
-  }
-  .repaire {
-    height: vh(282);
-    margin-bottom: vh(20);
-  }
-  .route {
-    height: vh(380);
+    &.transport {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      height: vh(260);
+      margin-bottom: vh(20);
+      .content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-content: space-around;
+        justify-content: space-around;
+        position: relative;
+        .t-top,
+        .t-bottom {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          .title {
+            display: block;
+            font-size: vw(18);
+            text-align: center;
+            color: #fefefe;
+          }
+          .num {
+            font-size: vw(40);
+            font-family: DIN;
+            font-weight: bold;
+            color: #20fdfa;
+            margin-top: vh(20);
+            text-align: center;
+            span {
+              font-size: vw(18);
+              font-weight: bold;
+              color: #1ee9e8;
+              padding-left: vw(10);
+            }
+            &.orange {
+              color: #ff9000;
+              span {
+                color: #ff9000;
+              }
+            }
+          }
+        }
+
+        .top-l,
+        .top-r,
+        .bottom-l,
+        .bottom-r {
+          width: 49.5%;
+        }
+
+        .t-top {
+        }
+        .line-tb {
+          width: 90%;
+          border: 1px solid #1c65fe;
+          opacity: 0.37;
+          margin: 0 auto;
+        }
+        .line-tb1 {
+          position: absolute;
+          top: 5%;
+          bottom: 5%;
+          left: 49%;
+          border: 1px solid #1c65fe;
+          opacity: 0.37;
+        }
+        .t-bottom {
+        }
+      }
+    }
+    &.repaire {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      height: vh(282);
+      margin-bottom: vh(20);
+      .content {
+        flex: 1;
+        .r-top {
+          height: vh(75);
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 0 vw(30);
+          .title {
+            font-size: vw(24);
+            color: #b2d1ff;
+          }
+          .num {
+            font-size: vw(40);
+            font-family: DIN;
+            font-weight: bold;
+            color: #ff9000;
+            span {
+              font-size: vw(16);
+              color: #ff9000;
+              padding-left: vw(10);
+            }
+          }
+        }
+        .r-bottom {
+          .title {
+            font-size: vw(18);
+            font-family: Microsoft YaHei;
+            font-weight: 400;
+            color: #fefefe;
+            margin-top: vh(25);
+            padding: 0 vw(30);
+          }
+          .num-list {
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-end;
+            padding: 0 vw(30);
+            .num {
+              display: flex;
+              margin-top: vh(20);
+              span {
+                display: block;
+                width: vw(43);
+                height: vh(59);
+                border: 1px solid #0276c5;
+                font-size: vw(34);
+                font-family: DIN;
+                font-weight: bold;
+                color: #00a4ff;
+                opacity: 0.6;
+                margin-right: vw(10);
+                text-align: center;
+                line-height: vh(59);
+                background: rgba(2, 118, 197, 0.3);
+              }
+            }
+            .subtit {
+              font-size: vw(18);
+              font-weight: bold;
+              color: #00a4ff;
+              padding-left: vw(5);
+            }
+          }
+        }
+      }
+    }
+    &.route {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      height: vh(380);
+      .content {
+        flex: 1;
+        .r-top {
+          height: vh(75);
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 0 vw(30);
+          .title {
+            font-size: vw(24);
+            color: #b2d1ff;
+          }
+          .num {
+            font-size: vw(40);
+            font-family: DIN;
+            font-weight: bold;
+            color: #ff9000;
+            span {
+              font-size: vw(16);
+              color: #ff9000;
+              padding-left: vw(10);
+            }
+          }
+        }
+        .r-bottom {
+          flex: 1;
+          width: 100%;
+          .route-list {
+            display: flex;
+            flex-wrap: wrap;
+            padding: vh(35) vw(10) vh(35);
+            box-sizing: border-box;
+            .item {
+              position: relative;
+              width: vw(212);
+              height: vh(82);
+              background: url('../../assets/image/two/box_2@3x.png');
+              background-size: vw(212) vh(82);
+              margin-bottom: vw(10);
+              &:nth-child(odd) {
+                margin-right: vw(13);
+              }
+              .title {
+                position: absolute;
+                top: vh(10);
+                left: vw(5);
+                font-size: vw(16);
+                color: #b2d1ff;
+              }
+              .rate {
+                position: absolute;
+                top: vh(10);
+                right: vw(10);
+                font-size: vw(34);
+                font-family: DIN;
+                font-weight: bold;
+                color: #e5efff;
+              }
+              .process {
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                position: absolute;
+                bottom: vh(10);
+                left: 50%;
+                width: vw(183);
+                height: vh(12);
+                margin-left: vw(-91.5);
+                border: vh(1) solid #193968;
+                span {
+                  display: block;
+                  width: vw(15);
+                  height: vh(6);
+                  background: #176ae7;
+                  margin: 0 vw(1.5);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
   }
 }
 </style>
